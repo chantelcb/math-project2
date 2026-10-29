@@ -22,6 +22,8 @@ sup a { text-decoration: none; color: var(--accent); }
 .btns { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
 button { font: 500 15px system-ui, sans-serif; padding: 8px 14px; border-radius: 8px; border: 1px solid var(--line); background: var(--bg); color: var(--fg); cursor: pointer; }
 button:hover { border-color: var(--accent); }
+button:disabled { opacity: .4; cursor: not-allowed; }
+button:disabled:hover { border-color: var(--line); }
 .demo svg { width: 100%; height: auto; display: block; }
 .eq { min-height: 1.6em; font-weight: 600; margin: 6px 0 0; }
 .hint { color: var(--muted); font-size: .95rem; margin: 6px 0 0; }
