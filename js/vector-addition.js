@@ -9,7 +9,9 @@
 
   var MAX_LENGTH = 5;                 // each vector is a random whole number from 1 to this
   var NS = 'http://www.w3.org/2000/svg';
+  var AXIS_MAX = 2 * MAX_LENGTH;      // the number line always runs from 0 to the largest possible sum
   var W = 600, X0 = 30, Y = 150;      // drawing area width, left edge, baseline height
+  var U = (W - 2 * X0) / AXIS_MAX;    // pixels per unit, the same for every example
   var stage = root.querySelector('.stage');
   var eq = root.querySelector('.eq');
   var a = 3, b = 4, step = 0;
@@ -30,10 +32,10 @@
   function render() {
     while (stage.firstChild) stage.removeChild(stage.firstChild);
     var total = a + b;
-    var u = Math.min(40, (W - 2 * X0) / total);   // pixels per unit
+    var u = U;
 
-    make('line', { x1: X0, y1: Y + 14, x2: X0 + total * u, y2: Y + 14, 'class': 'axis' });
-    for (var i = 0; i <= total; i++) {
+    make('line', { x1: X0, y1: Y + 14, x2: X0 + AXIS_MAX * u, y2: Y + 14, 'class': 'axis' });
+    for (var i = 0; i <= AXIS_MAX; i++) {
       make('line', { x1: X0 + i * u, y1: Y + 8, x2: X0 + i * u, y2: Y + 20, 'class': 'axis' });
       make('text', { x: X0 + i * u, y: Y + 38, 'class': 'tick' }, i);
     }
