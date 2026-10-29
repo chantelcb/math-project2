@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Addition with Vectors</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>Math Foundations · Integers</header>
+<main>
+
+<h1>Addition with Vectors</h1>
+
+<p>In the previous section we talked about additive inverses by describing them in terms of discrete objects or quantities. Another useful way of thinking about integers is as vectors. Remember how our Hindu-Arabic numeral system gave us a way of expressing quantities by encoding information about sizes of groups according to place value position and information about the number of groups of each size by the face value of the digit in the corresponding position? In the context of measurement, the size of a number is called its <strong>magnitude</strong> and describes its distance away from 0. Integers convey all of the same information as natural numbers - the numeral indicates the magnitude, or size of the number. In addition, <strong>vectors</strong> also convey information about direction, which is given by the sign of the number (either positive (+) or negative (-)). We can represent vectors geometrically with an arrow where the length of the arrow corresponds to the magnitude of a number and the direction of the arrow is given by the sign of the number.</p>
+
+<div class="figure-placeholder">[Figure: vectors drawn as arrows, with length showing magnitude and direction showing sign]</div>
+
+<p>Integers are useful for keeping track of quantities, but can also be used to give directions. For example, consider the following set of simple instructions: Take two steps right then take 3 more steps right. We could visualize this movement using the number line pictured below.</p>
+
+<div class="figure-placeholder">[Figure: number line showing 2 steps right, then 3 more steps right]</div>
+
+<p>If we let the direction “right” correspond to the positive sign and “left” correspond to the negative sign, we could give directions like this: Take 3 steps followed by -2 steps. This is the same as saying take 3 steps to the right then take two steps to the left.</p>
+
+<div class="figure-placeholder">[Figure: number line showing 3 steps right, then 2 steps left]</div>
+
+<p>Notice that our ending position corresponds to the sum 3 + -2 = 1. Geometrically, we say that vectors add by positioning the vectors nose to tail. The final position of the head of the last arrow corresponds to the quantity represented by the sum.</p>
+
+<div class="demo" id="vector-demo">
+  <h3>Try it: adding vectors nose to tail</h3>
+  <div class="btns">
+    <button type="button" data-action="0">Reset</button>
+    <button type="button" data-action="1">Step 1</button>
+    <button type="button" data-action="2">Step 2</button>
+    <button type="button" data-action="3">Step 3</button>
+    <button type="button" data-action="new">New Example</button>
+  </div>
+  <svg viewBox="0 0 600 220" role="img" aria-label="Number line showing two vectors added nose to tail">
+    <defs>
+      <marker id="head-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--g)"/></marker>
+      <marker id="head-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--b)"/></marker>
+      <marker id="head-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--r)"/></marker>
+    </defs>
+    <g class="stage"></g>
+  </svg>
+  <p class="eq" aria-live="polite">The interactive did not load. Check that vector-addition.js is in the same folder as this page.</p>
+  <p class="hint">Step 1 draws the first vector, Step 2 attaches the second at its head, Step 3 shows the sum.</p>
+</div>
+
+<p>We can extend this idea to two dimensions. Let’s continue using positive numbers to correspond to the direction “right” and negative numbers to correspond to the direction “left” in the horizontal direction. But let’s also let positive numbers correspond to the direction “up” (think, North) and negative numbers correspond to the direction “down” (think South) in the vertical direction (on the page). Then we can give directions like: Take 3 steps horizontally followed by -1 step vertically.</p>
+
+<div class="figure-placeholder">[Figure: two-dimensional grid showing 3 steps horizontally, then -1 step vertically]</div>
+
+<p>We could define a position in two dimensions by giving a horizontal and vertical coordinate - this is often done using the notation of an ordered pair like (3, -1) where the first number represents a movement in the horizontal direction and the second number represents a movement in the vertical direction. Notice that we could take -1 vertically and 3 steps horizontally and end up in the same place!</p>
+
+<p>Being able to express simple directions like this using vectors actually gives you the building blocks for learning about computer programming<sup><a href="#fn1" id="ref1">1</a></sup>. Have you ever wondered how your computer applications, or even your calculator, know how to do what they do? Someone had to program them by giving them directions telling your computer what to do with information you put into it. The more you understand about how computers get their directions, the easier it can be for you to learn how to use new technology. In fact, you can test how new technology works by giving it directions and seeing what it does.</p>
+
+<p>Calculators, for example, can deal with negative signs differently<sup><a href="#fn2" id="ref2">2</a></sup>, depending on how it has been programmed. Some calculators require you to enter a number before you can put a negative sign in front of it. Other calculators will let you enter the negative sign first. You might also notice that your calculator probably differentiates between a negative sign and subtraction. What happens if you enter the subtraction symbol followed by a 5 and then press “=” or enter? Depending on your calculator, it might treat your instructions as subtracting 5 from 0 giving you a -5. On the other hand, your calculator might “yell” at you and display a message like “error” or “syntax error” on the screen. This is your calculator informing you that it doesn’t know how to handle your instruction.</p>
+
+<p>I would encourage you to play around with your calculator and see what kind of instructions you can give it and try to figure out what it is doing and if it is doing what you expect. A word of caution: Sometimes random key strokes (especially on scientific calculators) can switch on modes that are hard to turn off if you’re not paying careful attention to which combination of keystrokes enabled you to turn that mode on in the first place. For now you might want to stick with combinations of keystrokes involving numbers and operations you are familiar with. If you want to explore other operations, you might want to have a manual handy just in case you need help backing yourself out of a jam. In any case, I would encourage you to limit your exploration to times when you won’t be needing your calculator for something important, like on an exam.</p>
+
+<div class="author-notes">
+  <h2>Your to-do notes from the Word file (delete this box when done)</h2>
+  <ul>
+    <li>Maybe several more examples</li>
+    <li>Examples involving unknown quantities (for example, several moves vertically and horizontally: where do we end up?)</li>
+    <li>And the idea that -(-a) = a</li>
+    <li>Need to introduce absolute value and inequalities in this section: talk more about magnitude and the notation we use to describe it, and several examples</li>
+    <li>Interesting exercises, like a “board” with different targets, giving directions and starting points and asking if we reach the target</li>
+    <li>Expressing directions in one dimension as sums, or asking where you end up? Similar for two dimensions?</li>
+    <li>Calculator games (like choosing a start and target number and an operation to get close to the target)</li>
+  </ul>
+</div>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn1">[Footnote text still needed. The Word file marks this footnote but has no text for it.] <a href="#ref1">↩</a></li>
+    <li id="fn2">The negative sign on a calculator can usually be found on a button that looks like “+/-”. <a href="#ref2">↩</a></li>
+  </ol>
+</div>
+
+</main>
+<script src="vector-addition.js"></script>
+</body>
+</html>

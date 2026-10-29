@@ -1,0 +1,42 @@
+/* Shared styles for all lesson pages */
+:root {
+  --bg: #fafaf7; --fg: #1d1d1b; --muted: #5d5d58; --card: #ffffff; --line: #d9d9d2;
+  --accent: #2f6f4f; --g: #2e9d57; --b: #2f6fd0; --r: #d33a3a; --note: #fff6dc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #171714; --fg: #ecece6; --muted: #a5a59d; --card: #22221e; --line: #3a3a34;
+    --accent: #6fcf9a; --g: #4fd07f; --b: #6a9cf0; --r: #f06a6a; --note: #3a3320;
+  }
+}
+body { margin: 0; background: var(--bg); color: var(--fg); font: 18px/1.65 Georgia, "Times New Roman", serif; }
+header { border-bottom: 1px solid var(--line); padding: 14px 20px; font: 600 15px system-ui, sans-serif; color: var(--muted); }
+main { max-width: 720px; margin: 0 auto; padding: 28px 20px 60px; }
+h1 { font-size: 2rem; line-height: 1.2; margin: .2em 0 .6em; }
+h2 { font: 600 1.15rem system-ui, sans-serif; margin: 2em 0 .4em; color: var(--accent); }
+sup a { text-decoration: none; color: var(--accent); }
+
+/* Interactive demo box */
+.demo { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; margin: 1.5em 0; font-family: system-ui, sans-serif; }
+.demo h3 { margin: 0 0 10px; font-size: 1rem; }
+.btns { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+button { font: 500 15px system-ui, sans-serif; padding: 8px 14px; border-radius: 8px; border: 1px solid var(--line); background: var(--bg); color: var(--fg); cursor: pointer; }
+button:hover { border-color: var(--accent); }
+.demo svg { width: 100%; height: auto; display: block; }
+.eq { min-height: 1.6em; font-weight: 600; margin: 6px 0 0; }
+.hint { color: var(--muted); font-size: .95rem; margin: 6px 0 0; }
+
+/* Vector drawing colors (used by vector-addition.js) */
+.vec { stroke-width: 4; fill: none; }
+.vec.g { stroke: var(--g); } .vec.b { stroke: var(--b); } .vec.r { stroke: var(--r); }
+.vlabel { font: 700 24px system-ui, sans-serif; text-anchor: middle; }
+.vlabel.g { fill: var(--g); } .vlabel.b { fill: var(--b); } .vlabel.r { fill: var(--r); }
+.axis { stroke: var(--line); stroke-width: 2; }
+.tick { font: 13px system-ui, sans-serif; fill: var(--muted); text-anchor: middle; }
+
+/* Placeholders and author notes (delete from a page when finished) */
+.figure-placeholder { border: 2px dashed var(--line); border-radius: 10px; padding: 18px; margin: 1.2em 0; text-align: center; color: var(--muted); font: 15px system-ui, sans-serif; }
+.author-notes { background: var(--note); border: 1px solid var(--line); border-radius: 10px; padding: 8px 18px 14px; margin-top: 3em; font: 15px/1.5 system-ui, sans-serif; }
+.author-notes h2 { margin-top: .8em; }
+.footnotes { border-top: 1px solid var(--line); margin-top: 3em; padding-top: 12px; font-size: .9rem; color: var(--muted); }
+.footnotes ol { padding-left: 1.2em; }
